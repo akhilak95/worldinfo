@@ -1,0 +1,51 @@
+<div class="col-12 title" style="font-size:22px;background-color:black;color:white;justify-content: center;display: flex;margin-bottom: 1rem">
+  <h3>Countries of {{region}}</h3>
+</div>
+
+<div class="container-fluid" *ngIf='allcountry.length>0'>
+  <form #createBlogForm="ngForm" (ngSubmit)="search()">
+
+    <div class="form-group  d-flex">
+      <input type="text" name="name" [(ngModel)]="name" #title="ngModel" class="form-control" placeholder="Enter Country Name"
+        required>
+      <button type="submit" class="btn btn-default" [disabled]="!createBlogForm.form.valid" style="margin-left: 4px;;">Search</button>
+    </div>
+
+
+  </form>
+  <div class="row" style="justify-content: center;">
+    <div class="card text-center book" *ngFor=' let country of allcountry '>
+      <div class="card-header">
+        <a [routerLink]="['/countryname',country.name]">
+          {{country.name}}</a>
+      </div>
+      <div class="card-body">
+
+        <h5 class="card-title">
+
+          <img class="card-img-top" src="{{country.flag}}" alt="Card image cap">
+        </h5>
+        <hr>
+        <p class="card-text">Capital : {{country.capital}} </p>
+        <p class="card-text">Time Zones : {{country.timezones}} </p>
+        Currencies :
+        <span *ngFor='let x of country.currencies'>
+          <a [routerLink]="['/currencies',x.code]">
+            {{x.name}}</a>
+        </span>
+        Languages:
+        <span *ngFor='let x of country.languages'>
+          <a [routerLink]="['/language',x.iso639_1]">
+            {{x.name}}</a>
+        </span>
+      </div>
+      <div class="card-footer text-muted">
+        SubRegion : {{country.subregion}}
+      </div>
+    </div>
+  </div>
+  <div style="text-align: center;margin: 10px;">
+    <button type="button" class="btn btn-dark" (click)="gobacktoprevpage()"> Back</button>
+  </div>
+</div>
+<router-outlet></router-outlet>

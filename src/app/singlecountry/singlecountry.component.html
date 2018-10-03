@@ -1,0 +1,175 @@
+<div class="container-fluid" *ngIf='currentcountryinfo.length>0'>
+  <div class="col-12 title" style="font-size:22px;background-color: black;color:white;text-align: center">{{country}}</div>
+  <div class="row" *ngFor="let item of currentcountryinfo">
+    <div class="col">
+
+      <body class="img-fluid" background="{{item.flag}}">
+        <div class="" style="font-style:bold;margin-top:2rem;">
+          <h5>Capital</h5>
+        </div>
+        <div class="content">
+          <h5>{{item.capital}}</h5>
+        </div>
+        <div class="" style="font-style:bold;margin-top:1rem;">
+          <h5> Top Level Domain</h5>
+        </div>
+        <div class="content">
+          <h5>{{item.topLevelDomain}}</h5>
+        </div>
+        <div class="" style="font-style:bold;margin-top:1rem;">
+          <h5>Alpha2Code</h5>
+        </div>
+        <div class="content">
+          <h5>{{item.alpha2Code}}</h5>
+        </div>
+        <div class="" style="font-style:bold;margin-top:1rem;">
+          <h5>Alpha3Code</h5>
+        </div>
+        <div class="content">
+          <h5>{{item.alpha3Code}}</h5>
+        </div>
+        <div class="" style="font-style:bold;margin-top:1rem;">
+          <h5>Calling Codes</h5>
+        </div>
+        <div class="content">
+          <h5>{{item.callingCodes}}</h5>
+        </div>
+        <div class="" style="font-style:bold;margin-top:1rem;">
+          <h5>Alt Spellings</h5>
+        </div>
+        <div class="content">
+          <h5>{{item.altSpellings}}</h5>
+        </div>
+        <div class="" style="font-style:bold;margin-top:1rem;">
+          <h5>Region</h5>
+        </div>
+        <div class="content">
+          <h5>{{item.region}}</h5>
+        </div>
+        <div class="" style="font-style:bold;margin-top:1rem;">
+          <h5>Sub region</h5>
+        </div>
+        <div class="content">
+          <h5>{{item.subregion}}</h5>
+        </div>
+        <div class="" style="font-style:bold;margin-top:1rem;">
+          <h5>Population</h5>
+        </div>
+        <div class="content">
+          <h5>{{item.population}}</h5>
+        </div>
+        <div class="" style="font-style:bold;margin-top:1rem;">
+          <h5>Latlng</h5>
+        </div>
+        <div class="content">
+          <h5>{{item.latlng}}</h5>
+        </div>
+        <div class="" style="font-style:bold;margin-top:1rem;">
+          <h5>Demonym</h5>
+        </div>
+        <div class="content">
+          <h5>{{item.demonym}}</h5>
+        </div>
+        <div class="" style="font-style:bold;margin-top:1rem;">
+          <h5>Area</h5>
+        </div>
+        <div class="content">
+          <h5>{{item.area}}</h5>
+        </div>
+        <div class="" style="font-style:bold;margin-top:1rem;">
+          <h5>Gini</h5>
+        </div>
+        <div class="content">
+          <h5>{{item.gini}}</h5>
+        </div>
+        <div class="" style="font-style:bold;margin-top:1rem;">
+          <h5>Time Zones</h5>
+        </div>
+        <div class="content">
+          <h5>{{item.timezones}}</h5>
+        </div>
+        <div class="" style="font-style:bold;margin-top:1rem;">
+          <h5>Borders</h5>
+        </div>
+        <div class="content">
+          <h5>{{item.borders}}</h5>
+        </div>
+        <div class="" style="font-style:bold;margin-top:1rem;">
+          <h5>Native Name</h5>
+        </div>
+        <div class="content">
+          <h5>{{item.nativeName}}</h5>
+        </div>
+        <div class="" style="font-style:bold;margin-top:1rem;">
+          <h5>Numeric Code</h5>
+        </div>
+        <div class="content">
+          <h5>{{item.numericCode}}</h5>
+        </div>
+        <div class="" style="font-style:bold;margin-top:1rem;">
+          <h5>Regional Blocks</h5>
+        </div>
+        <div class="content" *ngFor='let x of item.regionalBlocs'>
+          <h5>Acronym : {{x.acronym}}</h5>
+          <h5>Name : {{x.name}}</h5>
+          <h5>Other Acronyms : {{x.otherAcronyms}}</h5>
+          <h5>Other Names : {{x.otherNames}}</h5>
+        </div>
+        <div class="" style="font-style:bold;margin-top:1rem;">
+          <h5> cioc</h5>
+        </div>
+        <div class="content">
+          <h5>{{item.cioc}}</h5>
+        </div>
+        <div class="" style="font-style:bold;margin-top:1rem;">
+          <h5>Currencies</h5>
+        </div>
+        <div class="content" *ngFor='let x of item.currencies'>
+          <h5>Code : {{x.code}}</h5>
+          <a [routerLink]="['/currencies',x.code]">
+            <h5>Name : {{x.name}}</h5>
+          </a>
+          <h5>Symbol : {{x.symbol}}</h5>
+        </div>
+        <div class="" style="font-style:bold;margin-top:1rem;">
+          <h5>Languages</h5>
+        </div>
+        <div class="content" *ngFor='let x of item.languages'>
+          <h5>iso639_1 : {{x.iso639_1}}</h5>
+          <h5>iso639_2 : {{x.iso639_2}}</h5>
+          <a [routerLink]="['/language',x.iso639_1]">
+            <h5>Name : {{x.name}}</h5>
+          </a>
+          <h5>Native Name : {{x.nativeName}}</h5>
+        </div>
+        <div class="" style="font-style:bold;margin-top:1rem;">
+          <h5>Translations</h5>
+        </div>
+        <div class="content">
+          <h5>de : {{item.translations.de}}</h5>
+          <h5>es : {{item.translations.es}}</h5>
+          <h5>fr : {{item.translations.fr}}</h5>
+          <h5>ja : {{item.translations.ja}}</h5>
+          <h5>it : {{item.translations.it}}</h5>
+          <h5>br : {{item.translations.br}}</h5>
+          <h5>pt : {{item.translations.pt}}</h5>
+          <h5>nl : {{item.translations.nl}}</h5>
+          <h5>hr : {{item.translations.hr}}</h5>
+          <h5>fa : {{item.translations.fa}}</h5>
+
+        </div>
+
+
+
+
+
+        <div style="text-align: center;margin: 10px;">
+          <button type="button" class="btn btn-dark" (click)="gobacktoprevpage()"> Back</button>
+        </div>
+
+
+      </body>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,28 @@
+.book{
+    border-radius: 3px;
+    border-style: solid;
+    border-color: red;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card{
+    width: 18rem;margin:1rem;margin-top:2vw;
+  
+}
+.card-img-top{
+    height: 25vh;;
+}
+@media only screen  and (min-width:574px) and (max-width:700px){
+    .card{ 
+        width: 16rem;margin:1rem;
+    }
+   
+}
+@media only screen  and (min-width:40px) and (max-width:574px){
+    .card{ 
+        width: 13rem;margin:1rem;
+    }
+    .card-text{
+        font-size: 1rem;
+    }
+}
